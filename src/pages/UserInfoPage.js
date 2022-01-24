@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export const UserInfoPage = () => {
+const UserInfoPage = () => {
   const navigate = useNavigate()
 
   // These states are bound to the values of the text inputs
