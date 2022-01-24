@@ -1,7 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom'
+import { useUser } from '../hooks/useUser'
 
 const PrivateRoute = props => {
-  const user = null
+  const user = useUser()
 
   // If authorized, return an outlet that will render child elements
   // If not, return element that will navigate to login page
