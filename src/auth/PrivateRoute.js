@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom'
-import { useUser } from '../hooks/useUser'
+import useUser from '../hooks/useUser'
 
 const PrivateRoute = props => {
   const user = useUser()

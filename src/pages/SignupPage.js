@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useToken } from '../hooks/useToken'
+import useToken from '../hooks/useToken'
 
 const SignupPage = () => {
   const navigate = useNavigate()

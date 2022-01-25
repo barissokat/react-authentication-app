@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-export const PasswordResetFail = () => {
+const PasswordResetFail = () => {
   const navigate = useNavigate()
 
   return (
@@ -13,3 +13,5 @@ export const PasswordResetFail = () => {
     </div>
   )
 }
+
+export default PasswordResetFail
