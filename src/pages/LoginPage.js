@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useToken from '../hooks/useToken'
+import { useQueryParams } from '../util/useQueryParams'
 
 const LoginPage = () => {
   const navigate = useNavigate()
@@ -14,6 +15,14 @@ const LoginPage = () => {
   const [passwordValue, setPasswordValue] = useState('')
 
   const [googleOauthUrl, setGoogleOauthUrl] = useState('')
+  const { token: oauthToken } = useQueryParams()
+
+  useEffect(() => {
+    if (oauthToken) {
+      setToken(oauthToken);
+      navigate('/');
+    }
+  }, [oauthToken, setToken, navigate]);
 
   useEffect(() => {
     const loadOauthUrl = async () => {
