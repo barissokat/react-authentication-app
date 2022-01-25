@@ -7,6 +7,7 @@ import PleaseVerifyEmailPage from './pages/PleaseVerifyEmailPage'
 import EmailVerificationLandingPage from './pages/EmailVerificationLandingPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import PasswordResetLandingPage from './pages/PasswordResetLandingPage'
+import { EmailVerificationCodePage } from './pages/EmailVerificationCodePage'
 
 export const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
         <Route path='/' exact element={<PrivateRoute />}>
           <Route path='/' exact element={<UserInfoPage />} />
         </Route>
+        <Route path='/verify-email' exact element={<EmailVerificationCodePage />} />
         <Route path='/verify-email/:verificationString' exact element={<EmailVerificationLandingPage />} />
         <Route path='/forgot-password' exact element={<ForgotPasswordPage />} />
         <Route path='/login' exact element={<LoginPage />} />

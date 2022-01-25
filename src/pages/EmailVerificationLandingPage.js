@@ -31,6 +31,7 @@ const EmailVerificationLandingPage = () => {
 
   if (isLoading) return <p>Loading...</p>
   if (!isSuccess) return <EmailVerificationFail />
+
   return <EmailVerificationSuccess />
 }
 

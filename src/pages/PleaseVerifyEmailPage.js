@@ -1,12 +1,15 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useQueryParams } from '../util/useQueryParams'
 
 const PleaseVerifyEmailPage = () => {
   const navigate = useNavigate()
 
+  const { email } = useQueryParams()
+
   useEffect(() => {
     setTimeout(() => {
-      navigate('/')
+      navigate(`/verify-email?email=${encodeURIComponent(email)}`)
     }, 3000)
   }, [navigate])
 
