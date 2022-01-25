@@ -22,7 +22,7 @@ const SignupPage = () => {
     const { token } = response.data
 
     setToken(token)
-    navigate('/')
+    navigate(`/please-verify?email=${encodeURIComponent(emailValue)}`)
   }
 
   return (

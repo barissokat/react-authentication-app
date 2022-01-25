@@ -68,7 +68,8 @@ const LoginPage = () => {
       <button
         disabled={!emailValue || !passwordValue}
         onClick={onLoginClicked}
-      >Log In
+      >
+        Log In
       </button>
       <button onClick={() => navigate('/forgot-password')}>Forgot your password?</button>
       <button onClick={() => navigate('/signup')}>Don't have an account? Sign Up</button>

@@ -20,7 +20,7 @@ export const AppRoutes = () => {
         <Route path='/verify-email/:verificationString' exact element={<EmailVerificationLandingPage />} />
         <Route path='/forgot-password' exact element={<ForgotPasswordPage />} />
         <Route path='/login' exact element={<LoginPage />} />
-        <Route path='/reset-password/:passwordResetCode' exact element={<PasswordResetLandingPage />} />
+        <Route path='/reset-password' exact element={<PasswordResetLandingPage />} />
         <Route path='/please-verify' exact element={<PleaseVerifyEmailPage />} />
         <Route path='/signup' exact element={<SignupPage />} />
       </Routes>
