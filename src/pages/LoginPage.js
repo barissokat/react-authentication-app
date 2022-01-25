@@ -19,10 +19,10 @@ const LoginPage = () => {
 
   useEffect(() => {
     if (oauthToken) {
-      setToken(oauthToken);
-      navigate('/');
+      setToken(oauthToken)
+      navigate('/')
     }
-  }, [oauthToken, setToken, navigate]);
+  }, [oauthToken, setToken, navigate])
 
   useEffect(() => {
     const loadOauthUrl = async () => {
