@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useToken from '../hooks/useToken'
 
@@ -12,6 +12,23 @@ const LoginPage = () => {
 
   const [emailValue, setEmailValue] = useState('')
   const [passwordValue, setPasswordValue] = useState('')
+
+  const [googleOauthUrl, setGoogleOauthUrl] = useState('')
+
+  useEffect(() => {
+    const loadOauthUrl = async () => {
+      try {
+        const response = await axios.get('/auth/google/url')
+        const { url } = response.data
+
+        setGoogleOauthUrl(url)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    loadOauthUrl()
+  }, [])
 
   const onLoginClicked = async () => {
     const response = await axios.post('/api/login', {
@@ -46,6 +63,12 @@ const LoginPage = () => {
       </button>
       <button onClick={() => navigate('/forgot-password')}>Forgot your password?</button>
       <button onClick={() => navigate('/signup')}>Don't have an account? Sign Up</button>
+      <button
+        disabled={!googleOauthUrl}
+        onClick={() => { window.location.href = googleOauthUrl }}
+      >
+        Log in with Google
+      </button>
     </div>
   )
 }
